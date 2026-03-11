@@ -1,56 +1,61 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatiable" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Super Secret Sidequest</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+ 
 </head>
-
 <body>
 
+    <button class="button" id="startBtn">Secret Sidequest...</button>
 
-    <div id="videoContainer" style="display:none; margin-top:20px;">
+    <div id="videoContainer">
+        <h2 id="prankText">Get Pranked! 😂</h2>
+        
+        <div class="video-wrapper">
+            <button id="unmuteOverlay">
+                <h3 style="margin-bottom: 5px;">Click here to see the quest</h3>
+            </button>
 
-        <h2 id="prankText" style="color: #7d2ae8; margin-bottom: 10px;">Get Pranked! 😂</h2>
-        <iframe width="560" height="315"
-            src=""
-            id="rickroll"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="width: 100%; border-radius: 8px;">
-        </iframe>
+            <iframe 
+                id="rickroll"
+                src="" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 
-
-    <button class="button">Secret Sidequest...</button>
-
     <script>
-        const button = document.querySelector(".button");
+        const startBtn = document.getElementById("startBtn");
+        const unmuteOverlay = document.getElementById("unmuteOverlay");
         const videoContainer = document.getElementById("videoContainer");
+        const prankText = document.getElementById("prankText");
         const rickroll = document.getElementById("rickroll");
 
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-            button.classList.add("animate");
-
-            // Show video
+        startBtn.addEventListener("click", () => {
+            startBtn.style.display = "none";
             videoContainer.style.display = "block";
 
-            // Load video with autoplay
-            rickroll.src = "https://player.vimeo.com/video/877222359?autoplay=1";
+            rickroll.src = "https://player.vimeo.com/video/877222359?autoplay=1&muted=1";
+        });
 
-            setTimeout(() =>{
-            button.classList.remove("animate");
-            }, 600); // 1s = 1000ms 
+
+        unmuteOverlay.addEventListener("click", () => {
+
+            rickroll.src = "https://player.vimeo.com/video/877222359?autoplay=1&muted=0";
+            
+
+            prankText.style.display = "block";
+            
+
+            unmuteOverlay.style.opacity = "0";
+            setTimeout(() => {
+                unmuteOverlay.style.display = "none";
+            }, 600);
         });
     </script>
 </body>
-
-
 </html>
-
