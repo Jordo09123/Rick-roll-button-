@@ -18,7 +18,6 @@ body {
     padding: 20px;
 }
 
-/* Initial Button */
 .button {
     padding: 12px 28px;
     background-color: #7d2ae8;
@@ -36,7 +35,6 @@ body {
     transform: scale(0.95);
 }
 
-/* Prank Text - HIDDEN BY DEFAULT */
 #prankText {
     display: none; 
     color: #7d2ae8;
@@ -63,7 +61,6 @@ body {
     overflow: hidden;
 }
 
-/* Solid Black Overlay to hide video initially */
 #unmuteOverlay {
     position: absolute;
     top: 0;
@@ -93,3 +90,4 @@ iframe {
     height: 100%;
     border: none;
 }
+
