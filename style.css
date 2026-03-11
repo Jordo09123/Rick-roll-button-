@@ -106,4 +106,29 @@ body {
     50% { transform: rotate(0eg); }
     75% { transform: rotate(-2deg); }
     100% { transform: rotate(0deg); }
+
 }
+
+@media screen and (max-width: 600px) {
+    body {
+        flex-direction: column; 
+        padding: 20px;
+        justify-content: flex-start; 
+        padding-top: 50px;
+    }
+
+    #videoContainer {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    #rickroll {
+        width: 100% !important; 
+        height: auto;
+        aspect-ratio: 16 / 9; 
+    }
+
+    .button {
+        width: 90%; 
+        text-align: center;
